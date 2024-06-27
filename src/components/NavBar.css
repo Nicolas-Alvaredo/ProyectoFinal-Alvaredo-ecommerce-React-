@@ -1,0 +1,31 @@
+.bg-custom-full-width {
+  background-color: lightblue; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.navbar-nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav .nav-link {
+  margin-left: 60px;
+}
+
+.cart-widget img {
+  width: 50px; 
+  height: 50px; 
+}
