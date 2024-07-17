@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,7 +11,7 @@ const NavBar = () => {
   return (
     <Navbar expand="lg" className="bg-custom-full-width">
       <Container fluid>
-        <Navbar.Brand href="#home" className="d-flex align-items-center">
+        <Link to="/" className="navbar-brand d-flex align-items-center">
           <img 
             src={logo}
             width="80"
@@ -18,19 +19,18 @@ const NavBar = () => {
             className="d-inline-block align-top"
             alt="Logo"
           />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbar-nav-center">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#productos">Productos</Nav.Link>
-            <Nav.Link href="#contactos">Contactos</Nav.Link>
+            <NavLink to="/category/crash" className={({ isActive }) => isActive ? 'active-option' : 'option'}>Crashes</NavLink>
+            <NavLink to="/category/hi-hat" className={({ isActive }) => isActive ? 'active-option' : 'option'}>Hi-Hats</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? 'active-option' : 'option'}>Contacto</NavLink>
           </Nav>
-          </Navbar.Collapse>
-          <div className="ml-auto d-flex align-items-center">
-            <CartWidget />
-          </div>
-        
+        </Navbar.Collapse>
+        <div className="ml-auto d-flex align-items-center">
+          <CartWidget />
+        </div>
       </Container>
     </Navbar>
   );

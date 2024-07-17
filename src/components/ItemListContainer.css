@@ -1,5 +1,11 @@
 .item-list-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  text-align: center;
+  padding: 20px;
+}
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}

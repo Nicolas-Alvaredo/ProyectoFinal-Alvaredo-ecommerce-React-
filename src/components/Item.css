@@ -1,0 +1,76 @@
+.ItemCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 250px;
+  height: 450px; /* Asegura que todas las tarjetas tengan la misma altura */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  background-color: #e0f7fa; /* Fondo apenas celeste */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Distribuye espacio entre elementos */
+  text-align: center;
+}
+
+.ItemCard:hover {
+  transform: scale(1.05);
+}
+
+.ItemImg {
+  width: 100%; /* Asegura que todas las imágenes ocupen el mismo ancho */
+  height: 200px; /* Fija la altura de las imágenes */
+  object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsión */
+  border-radius: 8px 8px 0 0;
+}
+
+.ItemContent {
+  flex-grow: 1; /* Permite que este div ocupe el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ItemBrand {
+  font-size: 1.5em; /* Aumenta el tamaño de la letra de la marca */
+  margin: 8px 0;
+}
+
+.ItemHeader {
+  font-size: 1em; /* Tamaño de letra del texto del platillo */
+  margin: 4px 0;
+}
+
+.ItemFooter {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Añade espacio entre los botones */
+}
+
+.ItemButton, .DetailsButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.ItemButton:hover, .DetailsButton:hover {
+  background-color: #0056b3;
+}
+
+.DetailsButton {
+  background-color: #6c757d; /* Azul grisáceo */
+}
+
+.DetailsButton:hover {
+  background-color: #5a6268;
+}

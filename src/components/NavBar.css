@@ -1,5 +1,5 @@
 .bg-custom-full-width {
-  background-color: lightblue; 
+  background-color: lightblue;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -13,6 +13,11 @@
 
 .navbar-brand img {
   margin-right: 10px;
+  transition: transform 0.3s ease; /* Efecto de transición para el hover */
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el cursor */
 }
 
 .navbar-nav-center {
@@ -21,11 +26,41 @@
   justify-content: center;
 }
 
-.navbar-nav .nav-link {
-  margin-left: 60px;
+.navbar-nav .option, .navbar-nav .active-option {
+  margin-left: 100px; /* Ajusta el margen izquierdo para separar las palabras */
+  color: #004080; /* Color inicial de los enlaces: azul oscuro */
+  font-weight: bold; /* Texto en negrita */
+  text-decoration: none; /* Quita el subrayado */
+  transition: color 0.3s ease; /* Efecto de transición para el hover */
+}
+
+.navbar-nav .option:hover {
+  color: #007bff; /* Cambia solo el color del texto al pasar el cursor */
+}
+
+.navbar-nav .active-option {
+  color: #007bff; /* Color del enlace activo */
 }
 
 .cart-widget img {
-  width: 50px; 
-  height: 50px; 
+  width: 50px;
+  height: 50px;
+}
+
+.cart-widget {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-widget .cart-count {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  transform: translate(50%, 50%);
 }
