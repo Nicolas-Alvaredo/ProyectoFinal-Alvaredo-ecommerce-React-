@@ -13,11 +13,11 @@
 
 .navbar-brand img {
   margin-right: 10px;
-  transition: transform 0.3s ease; /* Efecto de transición para el hover */
+  transition: transform 0.3s ease;
 }
 
 .navbar-brand img:hover {
-  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el cursor */
+  transform: scale(1.1);
 }
 
 .navbar-nav-center {
@@ -27,19 +27,19 @@
 }
 
 .navbar-nav .option, .navbar-nav .active-option {
-  margin-left: 100px; /* Ajusta el margen izquierdo para separar las palabras */
-  color: #004080; /* Color inicial de los enlaces: azul oscuro */
-  font-weight: bold; /* Texto en negrita */
-  text-decoration: none; /* Quita el subrayado */
-  transition: color 0.3s ease; /* Efecto de transición para el hover */
+  margin-left: 100px;
+  color: #004080;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .navbar-nav .option:hover {
-  color: #007bff; /* Cambia solo el color del texto al pasar el cursor */
+  color: #007bff;
 }
 
 .navbar-nav .active-option {
-  color: #007bff; /* Color del enlace activo */
+  color: #007bff;
 }
 
 .cart-widget img {
@@ -53,7 +53,7 @@
   align-items: center;
 }
 
-.cart-widget .cart-count {
+.cart-widget .cart-widget-count {
   position: absolute;
   bottom: 0;
   right: 0;

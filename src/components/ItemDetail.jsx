@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import './ItemDetail.css'; 
 import ItemCount from './ItemCount';
+import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ id, marca, text, precio, img, aleacion, genero, stock }) => {
   const [addedToCart, setAddedToCart] = useState(false);
+  const { addItemToCart, getItemQuantity } = useCart();
 
   const handleAdd = (quantity) => {
-    console.log(`Cantidad agregada: ${quantity}`);
+    addItemToCart({ id, marca, text, precio, img }, quantity);
     setAddedToCart(true);
-    // Aquí Podriamos llamar una función para agregar el producto al carrito
   };
+
+  const itemQuantity = getItemQuantity(id);
+  const availableStock = stock - itemQuantity;
 
   return (
     <div className="item-card">
@@ -20,12 +25,15 @@ const ItemDetail = ({ id, marca, text, precio, img, aleacion, genero, stock }) =
         <p>Aleación: {aleacion}</p> 
         <p>Género: {genero}</p>
         <p>Precio: ${precio}</p>
+        <p>Stock: {availableStock}</p>
       </div>
       <div className="item-footer">
         {addedToCart ? (
-          <button className="item-button">Finalizar compra</button>
+          <Link to="/cart">
+            <button className="item-button">Finalizar compra</button>
+          </Link>
         ) : (
-          <ItemCount initial={1} stock={stock} onAdd={handleAdd} />
+          <ItemCount initial={1} stock={availableStock} onAdd={handleAdd} />
         )}
       </div>
     </div>

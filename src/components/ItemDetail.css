@@ -26,13 +26,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 0.9em; 
 }
 
 .item-footer {
   margin-top: 12px;
 }
 
-.item-button {
+.item-button,
+.item-count button {
   background-color: #007bff;
   color: white;
   border: none;
@@ -41,8 +43,26 @@
   cursor: pointer;
   transition: background-color 0.3s;
   margin-top: 10px;
+  margin: 5px;
 }
 
-.item-button:hover {
+.item-button:hover,
+.item-count button:hover {
   background-color: #0056b3;
+}
+
+.item-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-count button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.item-count span {
+  margin: 0 10px;
+  font-size: 16px;
 }

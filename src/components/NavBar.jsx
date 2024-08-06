@@ -4,8 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './NavBar.css';
-import logo from '../assets/logo.jpg'; // Importa la imagen del logo
-import CartWidget from './CartWidget'; // Importa CartWidget desde la ruta correcta
+import logo from '../assets/logo.jpg';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
   return (
@@ -29,7 +29,9 @@ const NavBar = () => {
           </Nav>
         </Navbar.Collapse>
         <div className="ml-auto d-flex align-items-center">
-          <CartWidget />
+          <Link to="/cart">
+            <CartWidget />
+          </Link>
         </div>
       </Container>
     </Navbar>

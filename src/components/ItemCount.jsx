@@ -4,13 +4,13 @@ import './ItemCount.css';
 const ItemCount = ({ initial, stock, onAdd }) => {
   const [quantity, setQuantity] = useState(initial);
 
-  const increment = () => {
+  const handleIncrement = () => {
     if (quantity < stock) {
       setQuantity(quantity + 1);
     }
   };
 
-  const decrement = () => {
+  const handleDecrement = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
@@ -19,13 +19,18 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   return (
     <div className="Counter">
       <div className="Controls">
-        <button className="Button" onClick={decrement}>-</button>
-        <h4 className="Number">{quantity}</h4>
-        <button className="Button" onClick={increment}>+</button>
+        <button className="Button" onClick={handleDecrement}>-</button>
+        <span className="Number">{quantity}</span>
+        <button
+          className="Button"
+          onClick={handleIncrement}
+          disabled={quantity >= stock}
+          style={quantity >= stock ? { backgroundColor: '#cccccc', cursor: 'not-allowed' } : {}}
+        >
+          +
+        </button>
       </div>
-      <button className="Button" onClick={() => onAdd(quantity)} disabled={!stock}>
-        Agregar al carrito
-      </button>
+      <button className="item-button" onClick={() => onAdd(quantity)} disabled={stock <= 0}>Agregar al carrito</button>
     </div>
   );
 };

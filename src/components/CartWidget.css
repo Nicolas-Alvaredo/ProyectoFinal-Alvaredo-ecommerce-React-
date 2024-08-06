@@ -1,30 +1,27 @@
 .cart-widget {
-    display: flex;
-    align-items: center;
-    position: relative; /* Permite posicionar el contador */
-  }
-  
-  .cart-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px; /* Hace los bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .cart-image:hover {
-    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el ratón */
-  }
-  
-  .cart-count {
-    position: absolute;
-    bottom: -5px; /* Ajuste de la posición inferior */
-    right: -5px; /* Ajuste de la posición derecha */
-    background-color: red;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 20px; 
+}
+
+.cart-widget-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.cart-widget-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0 4px;
+  font-size: 10px;
+  position: absolute;
+  top: -5px;
+  right: -10px; /* Ajusta la posición hacia la izquierda */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+}

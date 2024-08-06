@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './ItemListContainer.css'; 
-import { getProducts, getProductsByCategory } from '../asyncMock';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../services/firebase/firebaseConfig';
 import CategoryFilter from './CategoryFilter';
+import Loader from './Loader';
+import Swal from 'sweetalert2';
 
 const ItemListContainer = (props) => {
   const { greeting } = props;
@@ -11,19 +14,31 @@ const ItemListContainer = (props) => {
   const [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
 
-  const fetchProducts = (category) => {
+  const fetchProducts = async (category) => {
     setLoading(true);
-    const asyncFunc = category && category !== 'all' ? getProductsByCategory : getProducts;
-    asyncFunc(category !== 'all' ? category : undefined)
-      .then(response => {
-        setProducts(response);
-      })
-      .catch(error => {
-        console.error(error);
-      })
-      .finally(() => {
-        setLoading(false);
+    try {
+      const collectionRef = collection(db, 'items');
+      let q;
+      if (category && category !== 'all') {
+        q = query(collectionRef, where('categoria', '==', category));
+      } else {
+        q = collectionRef;
+      }
+      const querySnapshot = await getDocs(q);
+      const productsList = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setProducts(productsList);
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: `Error fetching products: ${error.message}`
       });
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -38,7 +53,7 @@ const ItemListContainer = (props) => {
     <div className="item-list-container">
       <h1>{greeting}</h1>
       <CategoryFilter onFilterChange={handleFilterChange} />
-      {loading ? <h2>Cargando...</h2> : <ItemList products={products} />}
+      {loading ? <Loader /> : <ItemList products={products} />}
     </div>
   );
 };
