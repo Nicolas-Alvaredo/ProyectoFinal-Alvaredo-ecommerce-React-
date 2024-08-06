@@ -1,5 +1,8 @@
 # Proyecto de E-commerce
 
+## Deploy
+https://ecommerce-nico-alvaredo.netlify.app
+
 ## Descripción del Proyecto
 
 Este proyecto es una aplicación de e-commerce desarrollada con React. Los usuarios pueden navegar por una lista de productos, agregarlos a un carrito de compras, y proceder a un proceso de checkout. Al finalizar la compra, se genera una orden que se almacena en Firestore, y se actualiza el stock de los productos en la base de datos.
