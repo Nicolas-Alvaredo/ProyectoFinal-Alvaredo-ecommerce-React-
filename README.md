@@ -13,7 +13,7 @@ La SPA cuenta con varias carpetas dentro del directorio `src`:
 
 ### assets
 
-- `logo.png`: Logo de la ecommerce.
+- `logo.jpg`: Logo de la ecommerce.
 
 ### components
 
