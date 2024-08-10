@@ -1,83 +1,83 @@
-# Proyecto de E-commerce
+# E-commerce Project
 
 ## Deploy
 https://ecommerce-nico-alvaredo.netlify.app
 
-## Descripción del Proyecto
+## Project Description
 
-Este proyecto es una aplicación de e-commerce desarrollada con React. Los usuarios pueden navegar por una lista de productos, agregarlos a un carrito de compras, y proceder a un proceso de checkout. Al finalizar la compra, se genera una orden que se almacena en Firestore, y se actualiza el stock de los productos en la base de datos.
+This project is an e-commerce application developed with React. Users can browse a list of products, add them to a shopping cart, and proceed to a checkout process. Upon completing the purchase, an order is generated and stored in Firestore, and the product stock is updated in the database.
 
-## Estructura del Proyecto
+## Project Structure
 
-La SPA cuenta con varias carpetas dentro del directorio `src`:
+The SPA (Single Page Application) has several folders within the `src` directory:
 
 ### assets
 
-- `logo.jpg`: Logo de la ecommerce.
+- `logo.jpg`: E-commerce logo.
 
 ### components
 
-- `Cart`: Componente para renderizar el carrito de compras.
-- `CartWidget`: Componente para mostrar el ícono y la cantidad de elementos en el carrito.
-- `Checkout`: Componente para gestionar el proceso de checkout.
-- `CheckoutForm`: Formulario para que el usuario ingrese sus datos durante el checkout.
-- `Item`: Componente para mostrar los detalles de un producto individual.
-- `ItemCount`: Componente para seleccionar la cantidad de productos.
-- `ItemDetail`: Componente para mostrar los detalles completos de un producto.
-- `ItemDetailContainer`: Contenedor para gestionar la lógica de obtención de los detalles del producto.
-- `ItemList`: Componente para mostrar la lista de productos.
-- `ItemListContainer`: Contenedor para gestionar la lógica de obtención de la lista de productos.
-- `Loader`: Componente de carga para mostrar durante las operaciones asincrónicas.
-- `NavBar`: Barra de navegación para la aplicación.
+- `Cart`: Component for rendering the shopping cart.
+- `CartWidget`: Component to display the cart icon and the number of items in the cart.
+- `Checkout`: Component to manage the checkout process.
+- `CheckoutForm`: Form for the user to enter their details during checkout.
+- `Item`: Component to display the details of an individual product.
+- `ItemCount`: Component to select the quantity of products.
+- `ItemDetail`: Component to show the complete details of a product.
+- `ItemDetailContainer`: Container to manage the logic for fetching product details.
+- `ItemList`: Component to display the list of products.
+- `ItemListContainer`: Container to manage the logic for fetching the product list.
+- `Loader`: Loading component to display during asynchronous operations.
+- `NavBar`: Navigation bar for the application.
 
 ### context
 
-- `CartContext`: Contexto que mantiene el estado del carrito y provee controladores/funciones para invocar y ejecutar en cada componente.
+- `CartContext`: Context that maintains the cart state and provides handlers/functions to be invoked and executed in each component.
 
 ### pages
 
-Las páginas de la aplicación se definen en el archivo `App.js` mediante las rutas:
+The application's pages are defined in the `App.js` file through routes:
 
-- **CategoryDetail**: Página que muestra los productos de una categoría específica. La ruta es /category/:id, donde id corresponde a la categoría seleccionada.
-- **Home**: Página principal en la ruta /, donde se renderizan todas las categorías. Cada categoría redirige a CategoryDetail.
-- **ItemDetailContainer**: Página que muestra los detalles de un producto específico.
-- **Cart**: Página que muestra el carrito de compras.
-- **Contacto**: Página de contacto.
-- **Checkout:** Página de checkout.
+- **CategoryDetail**: Page that shows the products of a specific category. The route is /category/:id, where id corresponds to the selected category.
+- **Home**: Main page at the / route, where all categories are rendered. Each category redirects to CategoryDetail.
+- **ItemDetailContainer**: Page that shows the details of a specific product.
+- **Cart**: Page that shows the shopping cart.
+- **Contacto**: Contact page.
+- **Checkout:** Checkout page.
 
-**Nota:** Todos los archivos tienen creados y linkeados su respectivo archivo de estilos `.css`.
+**Note:** All files have their respective `.css` style files created and linked.
 
-Algunos componentes están estilizados con clases de Bootstrap para añadir padding, márgenes, entre otros estilos.
+Some components are styled with Bootstrap classes to add padding, margins, and other styles.
 
-## Herramientas Utilizadas
+## Tools Used
 
-- **React**: Librería de JavaScript para construir interfaces de usuario.
-- **Firebase**: Plataforma de Google para el desarrollo de aplicaciones móviles y web.
-  - **Firestore**: Base de datos NoSQL utilizada para almacenar la información de los productos y las órdenes.
-- **Vite**: Herramienta de desarrollo rápido para proyectos de frontend.
-- **CSS**: Para el diseño y la apariencia de la aplicación.
+- **React**: JavaScript library for building user interfaces.
+- **Firebase**: Google's platform for developing mobile and web applications.
+  - **Firestore**: NoSQL database used to store product information and orders.
+- **Vite**: Fast development tool for frontend projects.
+- **CSS**: For the design and appearance of the application.
 
-## Comandos para Poder Ejecutar la Aplicación
+## Commands to Run the Application
 
-Para instalar las dependencias del proyecto:
+To install the project dependencies:
 
 ```bash
 npm install
 ```
 
-Para ejecutar la aplicación en modo de desarrollo:
+To run the application in development mode:
 
 ```bash
 npm run dev
 ```
 
-Para crear una versión de producción de la aplicación:
+To build a production version of the application:
 
 ```bash
 npm run build
 ```
 
-Para previsualizar la versión de producción:
+To preview the production version:
 
 ```bash
 npm run preview
